@@ -1,0 +1,32 @@
+<div class="row full-height">
+    <div class="col-md-2">
+        <h4>Select Test:</h4>
+
+        <div class="list-group">
+            <a href="#{{test.id}}"
+               class="list-group-item"
+               v-repeat="test : tests"
+               v-class="active : test.selected"
+               v-on="click: runTest(test)">
+                {{test.label}}
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-5 full-height">
+        <h4>OpenLayers 2.13</h4>
+        <iframe v-el="ol2Frame"
+                v-attr="
+                src: 'ol2.html?test=' + selectedTest.id
+                "></iframe>
+    </div>
+    <div class="col-md-5 full-height">
+        <h4>OpenLayers 3.1</h4>
+        <iframe v-el="ol3Frame"
+                v-attr="
+                src: 'ol3.html?test=' + selectedTest.id
+                "></iframe>
+    </div>
+</div>
+
+

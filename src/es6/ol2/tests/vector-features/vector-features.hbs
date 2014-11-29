@@ -1,0 +1,21 @@
+<ul class="list-group">
+    <li class="list-group-item">
+        Number of features: <span class="badge progress-bar-info">{{currentFeatures}}</span>
+    </li>
+    <li class="list-group-item">
+        Total adding time: <span class="badge progress-bar-info">{{renderTime | seconds}} sec.</span>
+    </li>
+    <li class="list-group-item">
+        Renderer: <span class="badge">{{map.renderer.join('')}}</span>
+    </li>
+    <li class="list-group-item">
+        Layer: <span class="badge">{{layerClass}}</span>
+    </li>
+    <li class="list-group-item">
+        <bs-button type="primary" v-on="click: addFeatures">
+            Add +1000 features
+        </bs-button>
+    </li>
+</ul>
+
+<ol-map width="{{map.width}}" height="{{map.height}}" renderer="{{map.renderer}}" layers="{{map.layers}}"></ol-map>
