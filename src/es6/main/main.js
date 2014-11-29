@@ -14,7 +14,8 @@ new Vue({
     },
 
     created: function () {
-        this._selectTest(this.tests[0]);
+        var initTest = this._findById(this._hashValue()) || this.tests[0];
+        this._selectTest(initTest);
     },
 
     methods: {
@@ -30,6 +31,14 @@ new Vue({
 
         _unselectAll: function () {
             this.tests.forEach(test => test.selected = false);
+        },
+
+        _findById: function (id) {
+            return this.tests.filter(test => test.id == id)[0];
+        },
+
+        _hashValue: function () {
+            return window.location.hash.replace(/^#/, "");
         }
     }
 });
