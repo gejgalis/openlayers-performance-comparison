@@ -4,13 +4,12 @@ module.exports.tasks = {
             spawn: false,
             livereload: true,
             livereloadOnError: false,
-            interrupt: true
+            interrupt: false
         },
 
         ol2: {
             files: [
-                'src/es6/ol2/**/*.*',
-                'www/**/*.*'
+                'src/es6/ol2/**/*.*'
             ],
             tasks: [
                 'browserify:ol2'
@@ -19,8 +18,7 @@ module.exports.tasks = {
 
         ol3: {
             files: [
-                'src/es6/ol3/**/*.*',
-                'www/**/*.*'
+                'src/es6/ol3/**/*.*'
             ],
             tasks: [
                 'browserify:ol3'
@@ -34,6 +32,15 @@ module.exports.tasks = {
             ],
             tasks: [
                 'browserify:main'
+            ]
+        },
+
+        www: {
+            files: [
+                'src/www/**/*.*'
+            ],
+            tasks: [
+                'copy:www'
             ]
         }
     }

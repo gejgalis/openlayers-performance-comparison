@@ -11,7 +11,7 @@ module.exports.tasks = {
                 {
                     expand: true,
                     cwd: "node_modules/bootstrap/dist",
-                    src: ['css/*', 'fonts/*'],
+                    src: ['css/**', 'fonts/**'],
                     dest: 'dist/bootstrap'
                 }
             ]
@@ -22,7 +22,7 @@ module.exports.tasks = {
                 {
                     expand: true,
                     cwd: "src/www",
-                    src: ['*'],
+                    src: ['**'],
                     dest: 'dist'
                 }
             ]
@@ -33,7 +33,7 @@ module.exports.tasks = {
                 {
                     expand: true,
                     cwd: "vendor",
-                    src: ['*'],
+                    src: ['**'],
                     dest: 'dist/vendor'
                 }
             ]

@@ -16,11 +16,13 @@ module.exports = function (grunt) {
     grunt.initConfig(config);
 
     grunt.registerTask('default', [
+        'clean',
         'compile'
     ]);
 
     grunt.registerTask('compile', [
-        'browserify'
+        'browserify',
+        'copy'
     ]);
 
     grunt.registerTask('serve', [
