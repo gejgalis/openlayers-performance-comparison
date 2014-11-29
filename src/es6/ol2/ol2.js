@@ -1,8 +1,10 @@
 import {$, Vue} from "../libs.js";
-import {VectorFeatures} from "./tests/vector-features/vector-features.js";
+import {VectorFeatures} from "./tests/vector-features/vector-features";
+import {OverlayElements} from "./tests/overlay-elements/overlay-elements";
 
 var tests = {
-    "vector-features": VectorFeatures
+    "vector-features": VectorFeatures,
+    "overlay-elements": OverlayElements
 };
 
 $(function () {

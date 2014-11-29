@@ -1,0 +1,18 @@
+<ul class="list-group">
+    <li class="list-group-item">
+        Number of elements: <span class="badge progress-bar-info">{{currentElements}}</span>
+    </li>
+    <li class="list-group-item">
+        Total adding time: <span class="badge progress-bar-info">{{renderTime | seconds}} sec.</span>
+    </li>
+    <li class="list-group-item">
+        Renderer: <span class="badge">{{map.renderer.join('')}}</span>
+    </li>
+    <li class="list-group-item">
+        <bs-button type="primary" v-on="click: addElements">
+            Add +1000 HTML elements
+        </bs-button>
+    </li>
+</ul>
+
+<ol-map v-ref="map" width="{{map.width}}" height="{{map.height}}" renderer="{{map.renderer}}" layers="{{map.layers}}"></ol-map>

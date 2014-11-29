@@ -26,5 +26,11 @@ export var OlMap = component("ol-map", {
             center: [0, 0],
             zoom: 1
         }
+    },
+
+    methods: {
+        getMap: function () {
+            return this._map;
+        }
     }
 });
