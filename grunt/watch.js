@@ -13,7 +13,7 @@ module.exports.tasks = {
                 'www/**/*.*'
             ],
             tasks: [
-                'compile-ol2'
+                'browserify:ol2'
             ]
         },
 
@@ -23,7 +23,7 @@ module.exports.tasks = {
                 'www/**/*.*'
             ],
             tasks: [
-                'compile-ol3'
+                'browserify:ol3'
             ]
         },
 
@@ -33,7 +33,7 @@ module.exports.tasks = {
                 'www/**/*.*'
             ],
             tasks: [
-                'compile-main'
+                'browserify:main'
             ]
         }
     }

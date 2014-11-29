@@ -4,9 +4,9 @@ module.exports.tasks = {
             options: {
                 port: 8090,
                 livereload: true,
-                base: ['.'],
+                base: ['./dist'],
                 open: {
-                    target: 'http://localhost:8090/www/index.html'
+                    target: 'http://localhost:8090/index.html'
                 }
             }
         }

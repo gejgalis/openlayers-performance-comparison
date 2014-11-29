@@ -16,19 +16,11 @@ module.exports = function (grunt) {
     grunt.initConfig(config);
 
     grunt.registerTask('default', [
-        'dist'
+        'compile'
     ]);
 
-    grunt.registerTask('compile-main', [
-        'browserify:main'
-    ]);
-
-    grunt.registerTask('compile-ol2', [
-        'browserify:ol2'
-    ]);
-
-    grunt.registerTask('compile-ol3', [
-        'browserify:ol3'
+    grunt.registerTask('compile', [
+        'browserify'
     ]);
 
     grunt.registerTask('serve', [

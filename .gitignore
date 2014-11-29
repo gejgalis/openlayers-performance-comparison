@@ -1,4 +1,5 @@
 *.idea
 !ignored
 node_modules
+dist
 
