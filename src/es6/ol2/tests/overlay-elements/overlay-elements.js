@@ -6,6 +6,9 @@ import {BsFps} from "../../../bs/bs-fps/bs-fps";
 import {$, Vue} from "../../../libs";
 import {openStreetMapLayer} from "../../layers/openStreetMapLayer";
 
+var EPSG_4326 = new OpenLayers.Projection("EPSG:4326");
+var EPSG_3857 = new OpenLayers.Projection("EPSG:3857");
+
 export var OverlayElements = Vue.extend({
     template: require("./overlay-elements.hbs"),
 
@@ -36,9 +39,6 @@ export var OverlayElements = Vue.extend({
             var i, lat, lon, overlay, lonLat,
                 map = this.$.map.getMap(),
                 start = performance.now();
-
-            var EPSG_4326 = new OpenLayers.Projection("EPSG:4326");
-            var EPSG_3857 = new OpenLayers.Projection("EPSG:3857");
 
             var newElementsCount = this.newElementsCount;
             for (i = 0; i < newElementsCount; i++) {

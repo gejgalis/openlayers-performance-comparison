@@ -8,29 +8,28 @@ import {imageVectorLayer} from "../../layers/imageVectorLayer";
 var EPSG_4326 = new OpenLayers.Projection("EPSG:4326");
 var EPSG_3857 = new OpenLayers.Projection("EPSG:3857");
 
-export var VectorFeatures = Vue.extend({
-    template: require("./vector-features.hbs"),
+export var AnimatingFeatures = Vue.extend({
+    template: require("./animating-features.hbs"),
 
     data: function () {
         return {
-            newFeaturesCount: 1000,
-            currentFeatures: 0,
-            renderTime: 0,
-            layerClass: "OpenLayers.Layer.Vector",
+            newAnimations: 100,
+            currentAnimations: 0,
             map: {
                 width: "100%",
                 height: "300px",
                 renderer: ["Canvas"],
                 layers: [openStreetMapLayer()],
-                center: [2.1833, 41.3833],
                 zoom: 2
             }
         }
     },
 
     created: function () {
+        this.geoms = [];
         this.vectorLayer = imageVectorLayer();
         this.map.layers.push(this.vectorLayer);
+        setInterval(this.tick.bind(this), 200);
     },
 
     filters: {
@@ -41,28 +40,35 @@ export var VectorFeatures = Vue.extend({
     },
 
     methods: {
-        addFeatures: function () {
-            var i, lat, lon, point, feature, lonLat, circle,
-                features = [],
-                start = performance.now();
+        addAnimations: function () {
+            var lat, lon, lonLat, geom, feature, features = [];
 
-            var newFeaturesCount = this.newFeaturesCount;
-            for (i = 0; i < newFeaturesCount; i++) {
+            for (var i = 0; i < this.newAnimations; i++) {
                 lat = Math.random() * 174 - 87;
                 lon = Math.random() * 360 - 180;
 
-                lonLat = new OpenLayers.LonLat(lon, lat)
-                    .transform(EPSG_4326, EPSG_3857);
+                lonLat = new OpenLayers.LonLat(lon, lat).transform(EPSG_4326, EPSG_3857);
 
-                point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
-                circle = OpenLayers.Geometry.Polygon.createRegularPolygon(point, 100000, 40, 0);
-                feature = new OpenLayers.Feature.Vector(circle);
+                geom = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
+
+                feature = new OpenLayers.Feature.Vector(geom, null, {
+                    externalGraphic: "data/icon.png",
+                    graphicWidth: 20,
+                    graphicHeight: 20,
+                    fillOpacity: 1
+                });
                 features.push(feature);
+                this.geoms.push(geom);
             }
-
             this.vectorLayer.addFeatures(features);
-            this.currentFeatures += newFeaturesCount;
-            this.renderTime += (performance.now() - start);
+            this.currentAnimations += this.newAnimations;
+        },
+
+        tick: function () {
+            this.geoms.forEach(function (geom) {
+                geom.move(2000, 2000);
+            });
+            this.vectorLayer.redraw();
         }
     }
 });

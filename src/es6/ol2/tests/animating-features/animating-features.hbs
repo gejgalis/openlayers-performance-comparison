@@ -1,0 +1,22 @@
+<ul class="list-group">
+    <li class="list-group-item">
+        Number of features: <span class="badge progress-bar-info">{{currentAnimations}}</span>
+    </li>
+    <li class="list-group-item">
+        FPS:<bs-fps></bs-fps>
+    </li>
+    <li class="list-group-item">
+        Renderer: <span class="badge">{{map.renderer.join('')}}</span>
+        <div class="text-warning">Rotation of bitmaps is not available.</div>
+    </li>
+    <li class="list-group-item">
+        Layer: <span class="badge">ol.source.ImageVector</span>
+    </li>
+    <li class="list-group-item">
+        <bs-button type="primary" v-on="click: addAnimations">
+            Add +100 animations
+        </bs-button>
+    </li>
+</ul>
+
+<ol-map v-ref="map" width="{{map.width}}" height="{{map.height}}" renderer="{{map.renderer}}" layers="{{map.layers}}"></ol-map>
