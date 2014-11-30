@@ -15,6 +15,7 @@ export var AnimatingFeatures = Vue.extend({
         return {
             newAnimations: 100,
             currentAnimations: 0,
+            layerClass: "OpenLayers.Layer.Vector",
             map: {
                 width: "100%",
                 height: "300px",
