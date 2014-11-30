@@ -8,7 +8,10 @@ new Vue({
     data: {
         tests: [
             {id: "vector-features", label: "Vector Features", selected: false},
-            {id: "overlay-elements", label: "Overlay Elements", selected: false}
+            {id: "overlay-elements", label: "Overlay Elements", selected: false},
+            {id: "animating-features", label: "Animating Features", selected: false},
+            {id: "hit-detection", label: "Hit Detection", selected: false},
+            {id: "topo-json", label: "TopoJSON", selected: false}
         ],
         selectedTest: {}
     },
