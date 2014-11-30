@@ -1,7 +1,8 @@
 require("./overlay-elements.less");
 
 import {OlMap} from "../../components/ol-map/ol-map";
-import {BsButton} from "../../../bs/bs-button/bs-button"
+import {BsButton} from "../../../bs/bs-button/bs-button";
+import {BsFps} from "../../../bs/bs-fps/bs-fps";
 import {$, Vue} from "../../../libs";
 import {openStreetMapLayer} from "../../layers/openStreetMapLayer";
 

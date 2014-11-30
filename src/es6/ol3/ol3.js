@@ -1,10 +1,12 @@
 import {$, Vue} from "../libs.js";
 import {VectorFeatures} from "./tests/vector-features/vector-features";
 import {OverlayElements} from "./tests/overlay-elements/overlay-elements";
+import {AnimatingFeatures} from "./tests/animating-features/animating-features";
 
 var tests = {
     "vector-features": VectorFeatures,
-    "overlay-elements": OverlayElements
+    "overlay-elements": OverlayElements,
+    "animating-features": AnimatingFeatures
 };
 
 $(function () {

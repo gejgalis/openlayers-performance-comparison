@@ -1,19 +1,20 @@
 <ul class="list-group">
     <li class="list-group-item">
-        Number of elements: <span class="badge progress-bar-info">{{currentElements}}</span>
+        Number of features: <span class="badge progress-bar-info">{{currentAnimations}}</span>
     </li>
     <li class="list-group-item">
         FPS:<bs-fps></bs-fps>
     </li>
     <li class="list-group-item">
-        Total adding time: <span class="badge progress-bar-info">{{renderTime | seconds}} sec.</span>
-    </li>
-    <li class="list-group-item">
         Renderer: <span class="badge">{{map.renderer.join('')}}</span>
+        <div class="text-warning">WebGL has issues with bitmap based features.</div>
     </li>
     <li class="list-group-item">
-        <bs-button type="primary" v-on="click: addElements">
-            Add +1000 HTML elements
+        Layer: <span class="badge">ol.source.ImageVector</span>
+    </li>
+    <li class="list-group-item">
+        <bs-button type="primary" v-on="click: addAnimations">
+            Add +100 animations
         </bs-button>
     </li>
 </ul>

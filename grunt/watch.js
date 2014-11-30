@@ -9,7 +9,8 @@ module.exports.tasks = {
 
         ol2: {
             files: [
-                'src/es6/ol2/**/*.*'
+                'src/es6/ol2/**/*.*',
+                'src/es6/bs/**/*.*'
             ],
             tasks: [
                 'browserify:ol2'
@@ -18,7 +19,8 @@ module.exports.tasks = {
 
         ol3: {
             files: [
-                'src/es6/ol3/**/*.*'
+                'src/es6/ol3/**/*.*',
+                'src/es6/bs/**/*.*'
             ],
             tasks: [
                 'browserify:ol3'
@@ -28,6 +30,7 @@ module.exports.tasks = {
         main: {
             files: [
                 'src/es6/main/**/*.*',
+                'src/es6/bs/**/*.*',
                 'www/**/*.*'
             ],
             tasks: [
