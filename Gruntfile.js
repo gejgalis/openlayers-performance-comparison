@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('compile', [
-        'browserify',
+        'webpack',
         'copy'
     ]);
 

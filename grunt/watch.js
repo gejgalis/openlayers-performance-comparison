@@ -13,7 +13,7 @@ module.exports.tasks = {
                 'src/es6/bs/**/*.*'
             ],
             tasks: [
-                'browserify:ol2'
+                'webpack:ol2'
             ]
         },
 
@@ -23,7 +23,7 @@ module.exports.tasks = {
                 'src/es6/bs/**/*.*'
             ],
             tasks: [
-                'browserify:ol3'
+                'webpack:ol3'
             ]
         },
 
@@ -34,7 +34,7 @@ module.exports.tasks = {
                 'www/**/*.*'
             ],
             tasks: [
-                'browserify:main'
+                'webpack:main'
             ]
         },
 
